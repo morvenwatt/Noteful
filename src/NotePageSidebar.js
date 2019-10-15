@@ -1,7 +1,7 @@
 import React from 'react';
 import './NotePageSidebar.css';
-
-// import Font Awesome 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+ 
 // import CSS
 
 
@@ -11,6 +11,7 @@ export default function NotePageSidebar (props) {
 
         
             <button onClick={() => props.history.goBack()}>
+                <FontAwesomeIcon icon='chevronLeft' />
                 Back
             </button>
 

@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { 
+    faPencil, faFolder, faTrash, faStickyNote, faChevronLeft 
+} from '@fortawesome/free-solid-svg-icons'
 
-// import import { library } from '@fortawesome/fontawesome-svg-core'
-// import {} from '@fortawesome/free-solid-svg-icons'
-// library.add (font awesome icons you want to use)
+
+library.add(faPencil, faFolder, faTrash, faStickyNote, faChevronLeft)
 
 ReactDOM.render(
 <BrowserRouter>

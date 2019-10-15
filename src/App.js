@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import './App.css';
 import STORE from './STORE';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 // import fontawesome 
 
@@ -105,6 +106,7 @@ class App extends Component {
 
         <header>
           <h1><Link to='/'>Noteful</Link></h1>
+          <FontAwesomeIcon icon='fa-sticky-note' />
         </header>
 
         <nav className='Nav'>

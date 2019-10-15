@@ -6,6 +6,7 @@ html {
   background-position: center;
   background-repeat: none;
   background-size: cover;
+  opacity: 50%;
 }
 
 header h1{

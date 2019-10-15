@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Note from './note';
 import './NoteList.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import CSS, Font Awesome 
 
@@ -21,7 +22,9 @@ export default function NoteList (props){
             </ul>
 
             <Link to='/add-note'>
+                <FontAwesomeIcon icon='pencil' />
             <button >Add Note</button>
+
             </Link>
 
         </section>

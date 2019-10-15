@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import './Note.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import css files & font awesome to use
 
 export default function Note(props) {
@@ -17,6 +17,7 @@ export default function Note(props) {
 
            <button className='deleteButton' type='button'>
                Delete
+               <FontAwesomeIcon icon='trash' />
            </button>
 
             <div className='dateModified'>

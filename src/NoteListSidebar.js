@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './NoteListSidebar.css';
-
-// import CSS, Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -27,6 +26,7 @@ export default function NoteListSidebar(props){
                     </li>)}
             </ul>
             <Link to='/add-folder'>
+                <FontAwesomeIcon icon='folder' />
                 <button>Add Folder</button>
             </Link>
         </div>
