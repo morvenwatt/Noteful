@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Note from './note';
 
 // import CSS, Font Awesome 
-// import button
+
 
 export default function NoteList (props){
     return (
@@ -18,7 +18,11 @@ export default function NoteList (props){
                         />
                     </li>)}
             </ul>
-            {/* Button here to add note */}
+
+            <Link to='/add-note'>
+            <button >Add Note</button>
+            </Link>
+
         </section>
     )
 }

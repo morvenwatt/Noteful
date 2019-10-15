@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-// import CSS, Font Awesome, button
+// import CSS, Font Awesome
 
 
 
@@ -25,7 +25,9 @@ export default function NoteListSidebar(props){
                         </span>
                     </li>)}
             </ul>
-            {/* Button here to add folder */}
+            <Link to='/add-folder'>
+                <button>Add Folder</button>
+            </Link>
         </div>
     )
 }

@@ -1,14 +1,17 @@
 import React from 'react';
-import { tsPropertySignature } from '@babel/types';
 
+// import Font Awesome 
 // import CSS
-//button import?
 
-export default function NotePageSidebar {
+
+export default function NotePageSidebar (props) {
     return (
         <div className='NotePageSidebar'>
 
-{/* Button here to go back a page */}
+        
+            <button onClick={() => props.history.goBack()}>
+                Back
+            </button>
 
             {props.folder && (
                 <h3 className='folderName'>
@@ -21,6 +24,7 @@ export default function NotePageSidebar {
 
 NotePageSidebar.defaultProps = {
     history: {
-        goBack: () => {}
+        goBack: () => { }
     }
 }
+
