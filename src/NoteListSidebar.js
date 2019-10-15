@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import './NoteListSidebar.css';
 
 // import CSS, Font Awesome
 

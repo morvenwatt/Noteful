@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Note from './note';
+import './NoteList.css';
 
 // import CSS, Font Awesome 
 

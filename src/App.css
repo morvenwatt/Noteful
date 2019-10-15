@@ -1,22 +1,30 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+}
+html {
+  background: url('./Images/postItNotes.jpg');
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
+header h1{
+ text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+  border-radius: 50%;
+  height: 60px;
+  font-weight: bold;
+  color: 3px solid hsla(240, 50, 50, 1);
+  background-color: aqua;
 }
 
-.App-link {
-  color: #09d3ac;
+.NoteListMain ul {
+  list-style-type: none;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 600px;
 }
+

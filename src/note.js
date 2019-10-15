@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
-
+import './Note.css';
 
 // import css files & font awesome to use
 
@@ -21,7 +21,7 @@ export default function Note(props) {
 
             <div className='dateModified'>
                 Last Modified:
-                <span>{format(props.modified, 'Do MMM YYYY')}</span>
+                {/* <span>{format(props.modified, 'DD MM YYYY')}</span> */}
             </div>
         </div>
     )

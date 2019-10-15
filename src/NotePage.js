@@ -1,5 +1,6 @@
 import React from 'react';
 import Note from './note';
+import './NotePage.css';
 
 // import CSS files
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import './NotePageSidebar.css';
 
 // import Font Awesome 
 // import CSS

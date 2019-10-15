@@ -28,6 +28,10 @@ class App extends Component {
     notes: []
   }
 
+  componentDidMount() {
+     this.setState(STORE);
+}
+
 
   renderSidebarRoutes() {
     const { notes, folders } = this.state;
