@@ -3,34 +3,49 @@ import { Link } from 'react-router-dom';
 import Note from './note';
 import './NoteList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ApiContext from './ApiContext';
 
-// import CSS, Font Awesome 
+const getNotesForFolder = (notes = [], folderId) => (
+    (!folderId)
+        ? notes
+        : notes.filter(note => note.folderId === folderId)
+)
 
+export default class NoteList extends React.Component {
 
-export default function NoteList (props){
-    return (
-        <section className='NoteListMain'>
-            <ul>
-                {props.notes.map(note =>
-                    <li key={note.id}>
-                        <Note
-                        id={note.id}
-                        name={note.name}
-                        modified={note.modified}
-                        />
-                    </li>)}
-            </ul>
+    static defaultProps = {
+        match: {
+            params: {}
+        }
+    }
 
-            <Link to='/add-note'>
-                <FontAwesomeIcon icon='pencil' />
-            <button >Add Note</button>
+    static contextType = ApiContext
 
-            </Link>
+    render() {
 
-        </section>
-    )
-}
+        const { folderId } = this.props.match.params
+        const { notes = [] } = this.context
+        const notesForFolder = getNotesForFolder(notes, folderId)
 
-NoteList.defaultProps = {
-    notes: []
+        return (
+            <section className='NoteListMain'>
+                <ul>
+                    {notesForFolder.map(note =>
+                        <li key={note.id}>
+                            <Note
+                                id={note.id}
+                                name={note.name}
+                                modified={note.modified}
+                            />
+                        </li>)}
+                </ul>
+
+                <Link to='/add-note'>
+                    <FontAwesomeIcon icon='pencil' />
+                    <button>Add Note</button>
+                </Link>
+
+            </section>
+        )
+    }
 }

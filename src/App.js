@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import './App.css';
-import STORE from './STORE';
+// import STORE from './STORE';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-
-// import fontawesome 
 
 import NotePage from './NotePage';
 import NotePageSidebar from './NotePageSidebar';
 import NoteList from './NoteList';
 import NoteListSidebar from './NoteListSidebar';
 
-// I do not like that these are outside the component....
-const findFolder = (folders = [], folderId) => folders.find(folders.id === folderId);
-const findNote = (notes = [], noteId) => notes.find(note => note.id === noteId);
+import ApiContext from './ApiContext';
+import config from './config';
 
-const getNotesForFolder = (notes = [], folderId) => (
-  (!folderId)
-    ? notes
-    : notes.filter(note => note.folderId === folderId)
-)
+
+// const findFolder = (folders = [], folderId) => folders.find(folders.id === folderId);
+// const findNote = (notes = [], noteId) => notes.find(note => note.id === noteId);
+
+// const getNotesForFolder = (notes = [], folderId) => (
+//   (!folderId)
+//     ? notes
+//     : notes.filter(note => note.folderId === folderId)
+// )
 
 
 
@@ -30,36 +31,45 @@ class App extends Component {
   }
 
   componentDidMount() {
-     this.setState(STORE);
+    Promise.all([
+      fetch(`${config.API_ENDPOINT}/notes`),
+      fetch(`${config.API_ENDPOINT}/folders`)
+    ])
+    .then(([notesRes, foldersRes]) => {
+      if (!notesRes.ok)
+      return notesRes.json().then(e => Promise.reject(e));
+      if(!foldersRes.ok)
+      return foldersRes.json().then(e => Promise.reject(e));
+
+      return Promise.all([notesRes.json(), foldersRes.json()]);
+    })
+    .then(([notes, folders]) => {
+      this.setState({notes, folders});
+    })
+    .catch(error => {
+      console.error({error});
+    })
 }
 
+handleDeleteNote = noteId => {
+  this.setState({
+    notes: this.state.notes.filter(note => note.id !== noteId)
+  });
+}
 
   renderSidebarRoutes() {
-    const { notes, folders } = this.state;
- 
+  
     return (
       <>
         {['/', '/folder/:folderId'].map(path => (
           <Route
-            exactkey={path}
+            exact
+            key={path}
             path={path}
-            render={routeProps => (
-              <NoteListSidebar
-                folders={folders}
-                notes={notes}
-                {...routeProps} />
-            )}
+            component = {NoteListSidebar}
           />
         ))}
-        <Route
-          path='/note/:noteId'
-          render={routeProps => {
-            const { noteId } = routeProps.match.params;
-            const note = findNote(notes, noteId) || {};
-            const folder = findFolder(folders, note.folderId);
-            return <NotePageSidebar {...routeProps} folder={folder} />
-          }}
-        />
+        <Route path='/note/:noteId' component={NotePageSidebar} />
         <Route path='/add-folder' component={NotePageSidebar} />
         <Route path='/add-note' component={NotePageSidebar} />
       </>
@@ -68,7 +78,6 @@ class App extends Component {
 
 
   renderMainRoutes() {
-    const { notes, folders } = this.state;
  
     return (
       <>
@@ -77,31 +86,27 @@ class App extends Component {
             exact
             key={path}
             path={path}
-            render={routeProps => {
-              const { folderId } = routeProps.match.params;
-              const notesInFolder = getNotesForFolder(notes, folderId);
-              return (
-                <NoteList
-                  {...routeProps}
-                  notes={notesInFolder} />
-              )
-            }}
+            component={NoteList}
           />
         ))}
         <Route
           path='/note/noteId'
-          render={routeProps => {
-            const { noteId } = routeProps.match.params;
-            const note = findNote(notes, noteId);
-            return <NotePage {...routeProps} note={note} />
-          }}
+          component={NotePage}
         />
       </>
     )
   }
 
   render() {
+
+    const value = {
+      notes: this.state.notes,
+      folder: this.state.folders,
+      deleteNote: this.handleDeleteNote
+    };
+
     return (
+      <ApiContext.Provider value={value}>
       <div className='app'>
 
         <header>
@@ -120,6 +125,7 @@ class App extends Component {
         <footer></footer>
 
       </div>
+      </ApiContext.Provider>
     )
   }
 }
