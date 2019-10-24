@@ -1,9 +1,0 @@
-.Note {
-    width: 280px;
-    height: 280px;
-    display: inline-flex;
-}
-
-.Note li {
-    border: 2px solid black;
-}

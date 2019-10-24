@@ -1,0 +1,18 @@
+.Note {
+    width: 280px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid blue;
+    margin-bottom: 5px;
+    padding: 0px 0px 0px 0px;
+    overflow: scroll;
+    background: url(../../noteImages/waterBubbles.png);
+    background-size: contain;
+    color: white;
+}
+
+
