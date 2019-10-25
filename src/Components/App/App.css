@@ -23,9 +23,14 @@ button, button.addFolderButton {
   color: white;
 }
 
+ul {
+  overflow: hidden;
+  overflow-y: auto;
+}
+
 .NoteListMain ul {
   list-style-type: none;
-  display: grid;
+ 
 }
 
 a {

@@ -11,7 +11,6 @@ class FolderSelector extends Component {
         this.state = {
             isOpen: false,
             headerTitle: 'Choose A Folder',
-            ulClassName: 'dropdown-list-hide'
         }
     }
 

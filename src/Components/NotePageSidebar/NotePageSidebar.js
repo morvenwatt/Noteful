@@ -24,12 +24,11 @@ export default class NotePageSidebar extends React.Component {
         const { noteId } = this.props.match.params
         const note = findNote(notes, noteId) || {}
         const folder = findFolder(folders, note.folderId)
-        
+
         return (
             <div className='NotePageSidebar'>
 
             <button onClick={() => this.props.history.goBack()}>
-                    {/* <FontAwesomeIcon icon='chevronLeft' /> */}
                     Back
             </button>
 
