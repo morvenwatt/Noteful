@@ -49,7 +49,7 @@ class AddFolder extends Component {
                     placeholder='Crab Recipes'>
                     </input>
 
-                    <Link to='/add-note'>
+                    <Link to='/addnote'>
                         <button 
                         className='submit-folder-button' 
                         type='submit'

@@ -1,5 +1,8 @@
 .add-folder-container {
     border: 2px solid white;
-    margin: 5px 5px;
+    margin: 5px auto;
+    padding: 5px 5px;
+    color: white;
+    width: 50%;
     
 }

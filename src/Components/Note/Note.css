@@ -1,6 +1,6 @@
 .Note {
-    width: 280px;
-    height: 200px;
+    width: 150px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;

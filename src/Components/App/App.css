@@ -7,27 +7,31 @@ html {
   background: url('../../noteImages/blueRing.png');
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 header h1{
  text-align: center;
+ font-size: 3em;
+ color: white;
 }
 
 button, button.addFolderButton {
-  border-radius: 50%;
-  height: 60px;
+  height: 30px;
   font-weight: bold;
-  border: 3px solid blue;
+  border: 1px solid blue;
   background-color: black;
   color: white;
-  margin-left: 5px;
 }
 
 .NoteListMain ul {
   list-style-type: none;
   display: grid;
-  
-
 }
 
+a {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}

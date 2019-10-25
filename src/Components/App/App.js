@@ -15,16 +15,6 @@ import ApiContext from '../../ApiContext';
 import config from '../../config';
 
 
-// const findFolder = (folders = [], folderId) => folders.find(folders.id === folderId);
-// const findNote = (notes = [], noteId) => notes.find(note => note.id === noteId);
-
-// const getNotesForFolder = (notes = [], folderId) => (
-//   (!folderId)
-//     ? notes
-//     : notes.filter(note => note.folderId === folderId)
-// )
-
-
 
 class App extends Component {
   state = {

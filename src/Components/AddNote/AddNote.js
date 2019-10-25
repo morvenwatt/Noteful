@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './AddNote.css';
 import { Link } from 'react-router-dom';
 import ApiContext from '../../ApiContext';
-
+import FolderSelector from '../FolderSelector/FolderSelector';
 
 class AddNote extends Component {
 
@@ -61,7 +61,7 @@ class AddNote extends Component {
             content: this.state.content,
             date: new Date()
         }
-        this.context.noteCards.push(note)
+        this.context.notes.push(note)
     }
 
     render() {
@@ -73,14 +73,14 @@ class AddNote extends Component {
                 <form>
                     <label className='note-name-label'>Note Name:</label>
                     <textarea
-                        classNmae='note-input-name'
+                        className='note-input-name'
                         type='text'
                         placeholder='Important Octopus To Do:'
                         onChange={(event) => this.updateNoteName(event.target.value)} />
 
-                    {/* <FolderSelector
+                 <FolderSelector
                  folders={this.context.folders}
-                  updateFolderId={this.updateFolderId} /> */}
+                  updateFolderId={this.updateFolderId} /> 
 
                     <label className='note-content-label'>Note Content:</label>
                     <textarea
@@ -88,6 +88,7 @@ class AddNote extends Component {
                         type='text'
                         placeholder="Schedule heart surgery for heart #3"
                         onChange={(event) => this.updateNoteContent(event.target.value)} />
+                       
 
                     <Link to='/mainpage'>
                         <button className='submit-note-button'

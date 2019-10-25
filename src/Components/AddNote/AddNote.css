@@ -1,0 +1,18 @@
+.add-note-container {
+    border: 2px solid white;
+    margin: 5px 5px;
+    color: white;
+    width: 50%;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a {
+    margin: 5px auto;
+
+}
