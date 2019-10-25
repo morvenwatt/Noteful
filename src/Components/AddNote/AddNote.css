@@ -1,15 +1,29 @@
 .add-note-container {
     border: 2px solid white;
-    margin: 5px 5px;
+    margin: auto;
     color: white;
     width: 50%;
-    
+    height: 350px;
+}
+.add-note-container h2, p {
+  padding-left: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    text-shadow: 0px 0px 3px whitesmoke;
+}
+p {
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px whitesmoke;
 }
 
 form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0px 10px;
 }
 
 a {

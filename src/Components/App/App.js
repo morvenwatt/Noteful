@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import './App.css';
+// import { KiloWattCode, headerImage } from '../../noteImages';
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faStickyNote } from '@fortawesome/free-solid-svg-icons'
@@ -100,11 +101,8 @@ handleDeleteNote = noteId => {
       <ApiContext.Provider value={value}>
       <div className='app'>
 
-        <header>
-          <h1><Link to='/'>CephaloNote</Link></h1>
-         
-        </header>
-
+        {/* <header><img src={headerImage} alt='header logo'></img></header> */}
+        <h1><Link to='/'>CephaloNote</Link></h1>
         <nav className='Nav'>
           {this.renderSidebarRoutes()}
         </nav>
@@ -113,7 +111,7 @@ handleDeleteNote = noteId => {
           {this.renderMainRoutes()}
         </main>
 
-        <footer></footer>
+        {/* <footer><img src={KiloWattCode} alt='logo'></img></footer> */}
 
       </div>
       </ApiContext.Provider>

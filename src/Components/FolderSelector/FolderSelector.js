@@ -55,14 +55,14 @@ class FolderSelector extends Component {
 
     render () {
         return (
-            <div className='folder-selector'>
+            <div className='folder-toggle'>
                 <div className='folder-title'
                 onClick={() => this.toggleDropdown()}>
                     <p>{this.state.headerTitle}</p>
                     <span><FontAwesomeIcon icon='folder' /></span>
                 </div>
 
-                <ul className='folder-toggle'
+                {/* <ul className='folder-toggle'
                 onClick={()=> this.toggleDropdown()}>
                     {this.props.folders.map(folder => 
                         <div key={folder.id}>
@@ -72,8 +72,8 @@ class FolderSelector extends Component {
                             itemID={folder.name}
                             onClick={(e) => this.changeHeader(e)}>{folder.name}</li>
                         </div>
-                        )}
-                </ul>
+                        )} 
+                </ul>*/}
             </div>
         )
     }
