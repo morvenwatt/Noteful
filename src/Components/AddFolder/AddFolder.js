@@ -27,8 +27,11 @@ class AddFolder extends Component {
             id: Math.floor(Math.random() * 1000)
         }
 
-        this.context.folders.push(folder)
-        console.log(this.context.folders)
+    
+        console.log(this.context)
+
+        this.context.folder.push(folder)
+       
         if (folder.name.length < 1) {
             event.preventDefault() ;
             alert ('Please Name This Folder!')
@@ -49,7 +52,7 @@ class AddFolder extends Component {
                     placeholder='Crab Recipes'>
                     </input>
 
-                    <Link to='/addnote'>
+                    <Link to='/'>
                         <button 
                         className='submit-folder-button' 
                         type='submit'

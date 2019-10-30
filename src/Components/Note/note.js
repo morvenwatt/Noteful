@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Moment } from 'react';
+// import { Moment } from 'react';
 import './Note.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import ApiContext from '../../ApiContext';
 import config from '../../config';
 
@@ -40,6 +38,8 @@ export default class Note extends React.Component {
     }
     render() {
         const { name, id, modified } = this.props
+        console.log(this.props)
+
         return (
             <div className='Note'>
 
@@ -48,7 +48,7 @@ export default class Note extends React.Component {
                         {name}
                     </Link>
                 </h2>
-            {/* How to pass in delete here? */}
+            
                 <button 
                 className='deleteButton' 
                 type='button'
@@ -65,4 +65,3 @@ export default class Note extends React.Component {
     }
 }
 
-// library.add (faTrash)

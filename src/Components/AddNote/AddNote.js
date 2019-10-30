@@ -31,8 +31,9 @@ class AddNote extends Component {
 
     updateFolderId = (folderName) => {
         console.log('update folderId has been called');
-        for (let i = 0; i < this.context.folders.length; i++) {
-            if (folderName === this.context.folders[i].name) {
+        console.log(this.context.folder);
+        for (let i = 0; i < this.context.folder.length; i++) {
+            if (folderName === this.context.folder[i].name) {
                 const selectedFolderId = this.context.folders[i].id;
                 const selectedFolderName = this.context.folders[i].name;
                 this.setState(
@@ -78,9 +79,11 @@ class AddNote extends Component {
                         placeholder='Important Octopus To Do:'
                         onChange={(event) => this.updateNoteName(event.target.value)} />
 
+                   
                  <FolderSelector
                  folders={this.context.folders}
-                  updateFolderId={this.updateFolderId} /> 
+                  updateFolderId={this.updateFolderId} 
+                  /> 
 
                     <label className='note-content-label'>Note Content:</label>
                     <textarea
@@ -90,7 +93,7 @@ class AddNote extends Component {
                         onChange={(event) => this.updateNoteContent(event.target.value)} />
                        
 
-                    <Link to='/mainpage'>
+                    <Link to='/'>
                         <button className='submit-note-button'
                             type='submit'
                             onClick={(event) => this.handleSubmit(event)}>

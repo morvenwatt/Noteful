@@ -2,46 +2,81 @@
   box-sizing: border-box;
 }
 html {
-  width: 100%;
-  height: 100%;
-  background: url('../../noteImages/giantPacific.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+ background-color: whitesmoke;
+ overflow: auto;
+} 
 
+header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../noteImages/4.png');
+  height: 350px;
+  width: 100%;
+  border-bottom: 4px outset black;
+}
 h1{
  text-align: center;
  font-size: 3em;
  color: white;
 }
 
+.lines {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 16px;
+  border-bottom: 4px solid black;
+  border-top: 4px solid black;
+}
+
+footer {
+  margin-top: 8px;
+  height: 16px;
+  border-top: 4px solid black;
+}
+
+
 button {
   height: 50px;
   border-radius: 50%;
   font-weight: bold;
-  border: 1px solid blue;
-  background-color: black;
+  border: 2px solid black;
+  background-color: hsla(380, 50%, 50%, 1);
   color: white;
 }
 
 ul {
-  display: inline-block;
-  width: 70%;
+  list-style-type: none;
+  columns: 2;
   height: 400px;
-  overflow: hidden;
-  overflow-y: auto;
+  width: 65%;
+  overflow-x: auto;
   margin: auto;
+  float: left;
+  margin-right: 10px;
 }
+
+.Nav {
+  width: 30%;
+  height: 450px;
+  margin: 3px 10px;
+  background-image: url('../../noteImages/waterBubbles.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+  border: 3px outset hsla(380, 50%, 50%, 1);
+}
+/* .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+
 
 a {
   color: black;
 }
 
 a:visited {
-  color: white;
+  color:  hsla(380, 50%, 50%, 1);
 }
 
-footer {
-  height: 100px;
-  width: 100%;
-}

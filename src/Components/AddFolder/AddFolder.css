@@ -1,8 +1,26 @@
 .add-folder-container {
-    border: 2px solid white;
+    border: 2px solid black;
+    background-image: url('../../noteImages/blueRing.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    color: black;
+    width: 60%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float:left;
+}
+
+.folder-name-label {
     margin: 5px auto;
-    padding: 5px 5px;
-    color: white;
-    width: 50%;
-    
+    font-weight: bold;
+}
+
+.folder-name-input {
+    width: 60%;
+    height: 50px;
+    margin: auto;
+    font-size: 25px;
 }

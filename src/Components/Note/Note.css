@@ -1,17 +1,12 @@
 .Note {
-    width: 400px;
-    height: 150px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    border: 2px solid blue;
-    margin-bottom: 5px;
-    padding: 0px 5px;
-    background: url(../../noteImages/spaceBubbles.png);
+    width: 280px;
+    height: 180px;
+    border: 2px solid black;
+    background-image: url('../../noteImages/spaceBubbles.png');
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 5px;
+    padding: 0px 5px;
     color: black !important;
 }
 

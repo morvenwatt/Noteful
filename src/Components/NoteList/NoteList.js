@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Note from '../Note/note';
 import './NoteList.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ApiContext from '../../ApiContext';
 
 const getNotesForFolder = (notes = [], folderId) => (
@@ -27,6 +26,8 @@ export default class NoteList extends React.Component {
         const { notes = [] } = this.context
         const notesForFolder = getNotesForFolder(notes, folderId)
 
+       console.log(notes)
+       
         return (
             <section className='NoteListMain'>
                 <ul>
@@ -41,8 +42,7 @@ export default class NoteList extends React.Component {
                 </ul>
 
                 <Link to='/add-note'>
-                    <FontAwesomeIcon icon='pencil' />
-                    <button>Add Note</button>
+                    <button className='add-note-button'>Add Note</button>
                 </Link>
 
             </section>

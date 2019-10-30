@@ -1,0 +1,35 @@
+ul.folder-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px;
+}
+div.folder-selector {
+    margin: auto;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-shadow: 0px 0px 5px whitesmoke;
+}
+
+ul.folder-list {
+    height: 100px; 
+    width: 100%;
+    margin: auto;
+  
+}
+
+label.note-content-label {
+    font-size: 20px;
+    text-shadow: 0px 0px 5px whitesmoke;
+}
+
+.folder-list-item {
+    border: 1px solid whitesmoke;
+    width: 250px;
+    margin: 5px 5px;
+    text-align: center;
+    color: black;
+}
+.folder-list-item::selection {
+    background-color: hsla(380, 50%, 50%, 1);
+}

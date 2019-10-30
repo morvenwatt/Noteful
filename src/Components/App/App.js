@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import './App.css';
-// import { KiloWattCode, headerImage } from '../../noteImages';
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faStickyNote } from '@fortawesome/free-solid-svg-icons'
 import NotePage from '../NotePage/NotePage';
 import NotePageSidebar from '../NotePageSidebar/NotePageSidebar';
 import NoteList from '../NoteList/NoteList';
@@ -36,6 +32,7 @@ class App extends Component {
 
       return Promise.all([notesRes.json(), foldersRes.json()]);
     })
+
     .then(([notes, folders]) => {
       this.setState({notes, folders});
     })
@@ -62,8 +59,7 @@ handleDeleteNote = noteId => {
           />
         ))}
         <Route path='/note/:noteId' component={NotePageSidebar} />
-        <Route path='/add-folder' component={AddFolder} />
-        <Route path='/add-note' component={AddNote} />
+       
       </>
     )
   }
@@ -97,21 +93,28 @@ handleDeleteNote = noteId => {
       deleteNote: this.handleDeleteNote
     };
 
+console.log(this.state.folders)
+
     return (
       <ApiContext.Provider value={value}>
       <div className='app'>
-
-        {/* <header><img src={headerImage} alt='header logo'></img></header> */}
-        <h1><Link to='/'>CephaloNote</Link></h1>
+        
+        <Link to='/'>
+        <header></header>
+        </Link>
+        <div className='lines'></div>
         <nav className='Nav'>
           {this.renderSidebarRoutes()}
         </nav>
 
         <main className='main'>
           {this.renderMainRoutes()}
+        <Route path='/add-folder' component={AddFolder} />
+        <Route path='/add-note' component={AddNote} />
         </main>
 
-        {/* <footer><img src={KiloWattCode} alt='logo'></img></footer> */}
+        <div className='lines clearfix'></div>
+        <footer className='clearfix'></footer>
 
       </div>
       </ApiContext.Provider>

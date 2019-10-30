@@ -1,1 +1,11 @@
+.NoteListMain {
+padding-left: 10px;
+}
 
+.add-note-button {
+    border-radius: 80px;
+    width: 200px;
+    font-size: 30px;
+    margin-left: 235px;
+
+}

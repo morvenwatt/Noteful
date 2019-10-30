@@ -1,5 +1,22 @@
 
+.addFolderButton {
+    border-radius: 80px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+   margin-left: 70px;
+}
+
 .NoteListSidebar {
-    height: 100px;
-    margin: auto;
+    height: 80%;
+    padding-bottom: 20px;
+}
+
+
+.NoteListSidebar-numOfNotes {
+    border: 3px outset hsla(380, 50%, 50%, 1);
+}
+
+.NoteListSidebar-folderLink {
+    border: 3px outset hsla(380, 50%, 50%, 1);
 }
