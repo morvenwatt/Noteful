@@ -114,7 +114,7 @@ console.log(this.state.folders)
         </main>
 
         <div className='lines clearfix'></div>
-        <footer className='clearfix'></footer>
+        <footer className='footer clearfix'></footer>
 
       </div>
       </ApiContext.Provider>

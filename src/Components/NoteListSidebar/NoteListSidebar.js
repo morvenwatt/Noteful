@@ -44,3 +44,7 @@ export default class NoteListSidebar extends React.Component {
         )
     }
 }
+
+// NoteListSidebar.propTypes = {
+//     folders: PropTypes.array
+// };

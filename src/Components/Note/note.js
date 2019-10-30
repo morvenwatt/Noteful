@@ -13,8 +13,8 @@ export default class Note extends React.Component {
 
     static contextType = ApiContext;
 
-    handleClickDelete = e => {
-        e.preventDefault();
+    handleClickDelete = (event) => {
+        event.preventDefault();
         const noteId = this.props.id
 
         fetch(`${config.API_ENDPOINT}/notes/${noteId}`, {
@@ -37,7 +37,10 @@ export default class Note extends React.Component {
             })
     }
     render() {
-        const { name, id, modified } = this.props
+        const note = this.context.notes
+        const modifiedDate = new Date();
+        const { name, id } = this.props
+
         console.log(this.props)
 
         return (
@@ -52,13 +55,13 @@ export default class Note extends React.Component {
                 <button 
                 className='deleteButton' 
                 type='button'
-                onClick={this.handleClickDelete}>
+                onClick={() => this.handleClickDelete(note.id, this.context.deleteNote )}>
                     Delete
                 </button>
 
                 <div className='dateModified'>
                     Last Modified:
-                    {/* <p className='date'><Moment format='Do MMM YYYY'>{modified}</Moment></p> */}
+                    <p>{modifiedDate.setDate()}</p>
                 </div>
             </div>
         )

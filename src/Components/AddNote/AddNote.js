@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './AddNote.css';
 import { Link } from 'react-router-dom';
 import ApiContext from '../../ApiContext';
+import config from '../../config';
 import FolderSelector from '../FolderSelector/FolderSelector';
 
 class AddNote extends Component {
@@ -21,7 +22,6 @@ class AddNote extends Component {
 
     updateNoteName = (noteName) => {
         this.setState({ noteName }, function () {
-
         })
     }
 
@@ -67,7 +67,32 @@ class AddNote extends Component {
         // Also, why isnt delete 
         
         this.context.notes.push(note)
-    }
+
+    fetch (`${config.API_ENDPOINT}/notes`, {
+        method: 'POST',
+        body: JSON.stringify(note),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => {
+        if (!res.ok) {
+        // get the error message from the response,
+        return res.json().then(error => {
+            // then throw it
+            throw error
+        })
+        }
+        return res.json()
+    })
+    .then(data => {
+      this.context.addNote(data)
+      this.props.history.push(`/folder/${data.folder_id}`)
+    })
+    .catch(error => {
+      console.error({ error })
+    })
+}
 
     render() {
         return (

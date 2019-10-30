@@ -49,3 +49,7 @@ export default class NoteList extends React.Component {
         )
     }
 }
+
+// NoteList.propTypes = {
+//     notes: PropTypes.array;
+// }
