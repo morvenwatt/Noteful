@@ -34,16 +34,17 @@ class FolderSelector extends Component {
         })
     }
 
-    render () {
+    
 
-        
+    render () {
+        console.log(this.context.folders) 
 
         return (
                 <div className='folder-selector'>
                     <h3>Choose A Folder:</h3>
                  <ul className='folder-list'
                 onClick={()=> this.handleSetFolder()}>
-                    {this.context.folder.map(folder => 
+                    {this.context.folders.map(folder => 
                             <select
                             key={folder.id}
                             required

@@ -89,7 +89,7 @@ handleDeleteNote = noteId => {
 
     const value = {
       notes: this.state.notes,
-      folder: this.state.folders,
+      folders: this.state.folders,
       deleteNote: this.handleDeleteNote
     };
 

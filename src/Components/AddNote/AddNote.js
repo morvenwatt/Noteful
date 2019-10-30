@@ -31,11 +31,11 @@ class AddNote extends Component {
 
     updateFolderId = (folderName) => {
         console.log('update folderId has been called');
-        console.log(this.context.folder);
-        for (let i = 0; i < this.context.folder.length; i++) {
-            if (folderName === this.context.folder[i].name) {
-                const selectedFolderId = this.context.folders[i].id;
-                const selectedFolderName = this.context.folders[i].name;
+        console.log(this.context.folders);
+        for (let i = 0; i < this.context.folders.length; i++) {
+            if (folderName === this.context.folders[i].name) {
+                const selectedFolderId = this.context.folder[i].id;
+                const selectedFolderName = this.context.folder[i].name;
                 this.setState(
                     {
                         folderId: selectedFolderId,
@@ -62,6 +62,8 @@ class AddNote extends Component {
             content: this.state.content,
             date: new Date()
         }
+        // this right here is a fucking issue ^^ for the notes not having proper id
+        
         this.context.notes.push(note)
     }
 
