@@ -23,16 +23,16 @@ export default class NoteListSidebar extends React.Component {
             <div className='NoteListSidebar'>
                 <ul className='NoteListSidebar-list'>
                     {folders.map(folder =>
-                        <li key={folder.id}>
+                        <li key={folder.id} className='NLSB-folder-list'>
                             <NavLink
                                 className='NoteListSidebar-folderLink'
                                 to={`/folder/${folder.id}`}>
 
 
                             <span className='NoteListSidebar-numOfNotes'>
-                                {countNotesForFolder(notes, folder.id)}
+                                <p>({countNotesForFolder(notes, folder.id)})</p>
                                 </span>
-                                {folder.name}
+                                <p>{folder.name}</p>
                             </NavLink>
                         </li>
                         )}

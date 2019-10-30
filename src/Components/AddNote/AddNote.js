@@ -61,8 +61,10 @@ class AddNote extends Component {
             folderName: this.state.folderName,
             content: this.state.content,
             date: new Date()
+
         }
         // this right here is a fucking issue ^^ for the notes not having proper id
+        // Also, why isnt delete 
         
         this.context.notes.push(note)
     }

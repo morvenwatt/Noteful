@@ -44,14 +44,16 @@ class FolderSelector extends Component {
                     <h3>Choose A Folder:</h3>
                  <ul className='folder-list'
                 onClick={()=> this.handleSetFolder()}>
+                    <select required>
                     {this.context.folders.map(folder => 
-                            <select
+                                <option
                             key={folder.id}
-                            required
                             className='folder-list-item'
                             itemID={folder.name}
-                            onClick={(e) => this.changeHeader(e)}>{folder.name}</select>
+                            onClick={(e) => this.changeHeader(e)}>{folder.name}
+                                </option>
                         )} 
+                        </select>
                 </ul>
                 </div>
         )

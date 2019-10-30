@@ -30,7 +30,7 @@ class AddFolder extends Component {
     
         console.log(this.context)
 
-        this.context.folder.push(folder)
+        this.context.folders.push(folder)
        
         if (folder.name.length < 1) {
             event.preventDefault() ;
