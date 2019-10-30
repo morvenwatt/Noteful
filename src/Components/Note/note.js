@@ -55,13 +55,17 @@ export default class Note extends React.Component {
                 <button 
                 className='deleteButton' 
                 type='button'
-                onClick={() => this.handleClickDelete(note.id, this.context.deleteNote )}>
+                onClick={(e) => this.handleClickDelete(e)}>
                     Delete
                 </button>
 
                 <div className='dateModified'>
                     Last Modified:
                     <p>{modifiedDate.setDate()}</p>
+                </div>
+
+                <div className='content'>
+                    <p>{this.props.content}</p>
                 </div>
             </div>
         )

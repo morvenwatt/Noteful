@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './AddFolder.css';
 import { Link } from 'react-router-dom';
 import ApiContext from '../../ApiContext';
+import config from '../../config';
 
 class AddFolder extends Component {
 
@@ -36,6 +37,32 @@ class AddFolder extends Component {
             event.preventDefault() ;
             alert ('Please Name This Folder!')
         }
+
+
+    fetch (`${config.API_ENDPOINT}/folders`, {
+        method: 'POST',
+        body: JSON.stringify(folder),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => {
+        if (!res.ok) {
+        // get the error message from the response,
+        return res.json().then(error => {
+            // then throw it
+            throw error
+        })
+        }
+        return res.json()
+    })
+    .then(data => {
+      this.context.addFolder(data)
+      this.props.history.push(`/folder/${data.folder_id}`)
+    })
+    .catch(error => {
+      console.error({ error })
+    })
     }
 
     render () {
