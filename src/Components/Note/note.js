@@ -65,7 +65,7 @@ export default class Note extends React.Component {
                 </div>
 
                 <div className='content'>
-                    <p>{this.props.content}</p>
+                    <p></p>
                 </div>
             </div>
         )
