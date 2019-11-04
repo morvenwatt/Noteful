@@ -1,3 +1,4 @@
+
 .add-note-container {
     border: 2px solid black;
     background-image: url('../../noteImages/blueRing.png') !important;
@@ -12,6 +13,7 @@
     justify-content: center;
     float: left;
 }
+
 
 h2 {
     font-size: 2em;

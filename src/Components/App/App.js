@@ -10,6 +10,7 @@ import AddNote from '../AddNote/AddNote';
 
 import ApiContext from '../../ApiContext';
 import config from '../../config';
+import ErrorBoundary from '../../ErrorBoundary';
 
 
 
@@ -86,16 +87,16 @@ handleDeleteNote = noteId => {
   }
 
   render() {
-
+    
     const value = {
       notes: this.state.notes,
       folders: this.state.folders,
       deleteNote: this.handleDeleteNote
     };
 
-console.log(this.state.folders)
 
     return (
+      <ErrorBoundary>
       <ApiContext.Provider value={value}>
       <div className='app'>
         
@@ -118,6 +119,7 @@ console.log(this.state.folders)
 
       </div>
       </ApiContext.Provider>
+      </ErrorBoundary>
     )
   }
 }

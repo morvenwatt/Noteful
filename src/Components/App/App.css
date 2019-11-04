@@ -4,6 +4,7 @@
 html {
  background-color: whitesmoke;
  overflow: auto;
+
 } 
 
 header {
@@ -68,11 +69,12 @@ ul {
   float: left;
   border: 3px outset  rgb(236, 46, 46);
 }
-/* .clearfix::after {
+
+.clearfix::after {
   content: "";
   clear: both;
   display: table;
-} */
+} 
 
 
 a {

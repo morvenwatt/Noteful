@@ -8,6 +8,8 @@
     margin-bottom: 5px;
     padding: 0px 5px;
     color: black !important;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 

@@ -14,8 +14,6 @@ export default class NoteListSidebar extends React.Component {
 
         const countNotesForFolder = (notes = [], folderId) => notes.filter(note => note.folderId === folderId).length
         const { folders = [], notes = [] } = this.context
-        // it is not reading anything from context, it needs the this.props.folders
-
 
         console.log(this.context)
         
@@ -46,5 +44,5 @@ export default class NoteListSidebar extends React.Component {
 }
 
 // NoteListSidebar.propTypes = {
-//     folders: PropTypes.array
+//     folders: propTypes.array
 // };
