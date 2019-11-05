@@ -1,7 +1,7 @@
 
 .add-note-container {
     border: 2px solid black;
-    background-image: url('../../noteImages/blueRing.png') !important;
+    background-image: url('../../noteImages/giantPacificWithFish.png') !important;
     background-size: cover;
     background-repeat: no-repeat;
     margin: auto;
@@ -18,12 +18,20 @@
 h2 {
     font-size: 2em;
     text-shadow: 0px 0px 4px whitesmoke;
+    color: white;
     margin: 2px auto;
+}
+
+h3 {
+    margin: 3px auto;
+    text-align: center;
+    color: white;
 }
 p {
     font-size: 1em;
     font-weight: bold;
     margin: 2px auto;
+    color: white;
     text-shadow: 0px 0px 4px whitesmoke;
 }
 
@@ -53,9 +61,10 @@ a {
 }
 
 .note-name-label, .note-content-label {
-    margin: 5px auto;
+    margin: 2px auto;
     font-weight: bold;
     text-shadow: 0px 0px 4px whitesmoke;
+    color: white;
     font-size: 15px
 }
 

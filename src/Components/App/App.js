@@ -78,7 +78,7 @@ handleDeleteNote = noteId => {
           />
         ))}
         <Route
-          path='/note/noteId'
+          path='/note/:noteId'
           component={NotePage}
         />
       </>
@@ -109,10 +109,9 @@ handleDeleteNote = noteId => {
 
         <main className='main'>
         {this.renderMainRoutes()}
-        </main>
         <Route path='/add-folder' component={AddFolder} />
         <Route path='/add-note' component={AddNote} />
-       
+        </main>
 
         <div className='lines'></div>
         <footer className='footer'></footer>

@@ -2,7 +2,7 @@
     width: 280px;
     height: 180px;
     border: 2px solid black;
-    background-image: url('../../noteImages/spaceBubbles.png');
+    background-image: url('../../noteImages/1.png');
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 5px;
@@ -10,6 +10,7 @@
     color: black !important;
     overflow: hidden;
     overflow-y: scroll;
+    text-align: center;
 }
 
 

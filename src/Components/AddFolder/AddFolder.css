@@ -1,6 +1,6 @@
 .add-folder-container {
     border: 2px solid black;
-    background-image: url('../../noteImages/blueRing.png') !important;
+    background-image: url('../../noteImages/giantPacificWithFish.png') !important;
     background-size: cover;
     background-repeat: no-repeat;
     margin: auto;
@@ -24,3 +24,4 @@
     margin: auto;
     font-size: 25px;
 }
+

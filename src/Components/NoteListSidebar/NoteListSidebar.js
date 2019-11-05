@@ -38,6 +38,7 @@ export default class NoteListSidebar extends React.Component {
                 <Link to='/add-folder'>
                     <button className='addFolderButton'>Add Folder</button>
                 </Link>
+                
             </div>
         )
     }
