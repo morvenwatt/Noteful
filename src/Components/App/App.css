@@ -6,6 +6,11 @@ html {
  overflow: auto;
 
 } 
+.main {
+  height: 500px;
+  border: 1px solid darkred;
+  padding-top: 20px;
+}
 
 header {
   background-size: cover;
@@ -62,7 +67,7 @@ ul {
 .Nav {
   width: 30%;
   height: 450px;
-  margin: 3px 10px;
+  margin: 20px 10px;
   background-image: url('../../noteImages/1.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,12 +75,12 @@ ul {
   border: 3px outset  rgb(236, 46, 46);
 }
 
-.clearfix::after {
+/* .clearfix::after {
   content: "";
   clear: both;
   display: table;
-} 
-
+}  */
+/* Apply this to the containers that need pushed down! */
 
 a {
   color: black;

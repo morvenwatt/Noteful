@@ -67,7 +67,6 @@ handleDeleteNote = noteId => {
 
 
   renderMainRoutes() {
- 
     return (
       <>
         {['/', '/folder/:folderId'].map(path => (
@@ -94,7 +93,6 @@ handleDeleteNote = noteId => {
       deleteNote: this.handleDeleteNote
     };
 
-
     return (
       <ErrorBoundary>
       <ApiContext.Provider value={value}>
@@ -104,18 +102,20 @@ handleDeleteNote = noteId => {
         <header></header>
         </Link>
         <div className='lines'></div>
+
         <nav className='Nav'>
           {this.renderSidebarRoutes()}
         </nav>
 
         <main className='main'>
-          {this.renderMainRoutes()}
+        {this.renderMainRoutes()}
+        </main>
         <Route path='/add-folder' component={AddFolder} />
         <Route path='/add-note' component={AddNote} />
-        </main>
+       
 
-        <div className='lines clearfix'></div>
-        <footer className='footer clearfix'></footer>
+        <div className='lines'></div>
+        <footer className='footer'></footer>
 
       </div>
       </ApiContext.Provider>

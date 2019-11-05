@@ -7,7 +7,7 @@
     margin: auto;
     color:black;
     width: 60%;
-    height: 650px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,23 +40,23 @@ a {
 
 .note-input-name {
     width: 70%;
-    height: 50px;
-    margin: 10px auto;
-    font-size: 25px;
+    height: 40px;
+    margin: 5px auto;
+    font-size: 20px;
 }
 
 .note-input-content {
     width: 70%;
-    height: 200px;
+    height: 100px;
     margin: auto;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .note-name-label, .note-content-label {
     margin: 5px auto;
     font-weight: bold;
     text-shadow: 0px 0px 4px whitesmoke;
-    font-size: 20px
+    font-size: 15px
 }
 
 button.submit-note-button {

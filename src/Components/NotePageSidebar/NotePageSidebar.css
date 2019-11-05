@@ -1,0 +1,14 @@
+.NotePageSidebar {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.back-button {
+   margin: auto;
+
+}
+
+.folderName {
+    text-align: center;
+}

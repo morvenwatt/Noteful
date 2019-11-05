@@ -28,7 +28,9 @@ export default class NotePageSidebar extends React.Component {
         return (
             <div className='NotePageSidebar'>
 
-            <button onClick={() => this.props.history.goBack()}>
+            <button 
+            className='back-button'
+            onClick={() => this.props.history.goBack()}>
                     Back
             </button>
 
