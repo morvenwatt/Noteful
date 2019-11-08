@@ -3,7 +3,7 @@ import './FolderSelector.css';
 import ApiContext from '../../ApiContext';
 
 class FolderSelector extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             isOpen: false,
@@ -15,7 +15,7 @@ class FolderSelector extends Component {
     static contextType = ApiContext;
 
     handleClickOuter = () => {
-        this.setState ({
+        this.setState({
             isOpen: false
         })
     }
@@ -27,35 +27,35 @@ class FolderSelector extends Component {
 
 
     changeHeader = (e) => {
-        this.setState ({
+        this.setState({
             headerTitle: e.target.id
-        }, function() {
+        }, function () {
             this.handleSetFolder();
         })
     }
 
-    
 
-    render () {
-        console.log(this.context.folders) 
+
+    render() {
+        console.log(this.context.folders)
 
         return (
-                <div className='folder-selector'>
-                    <h3>Choose A Folder:</h3>
-                 <ul className='folder-list'
-                onClick={()=> this.handleSetFolder()}>
+            <div className='folder-selector'>
+                <h3>Choose A Folder:</h3>
+                <ul className='folder-list'
+                    onClick={() => this.handleSetFolder()}>
                     <select required>
-                    {this.context.folders.map(folder => 
-                                <option
-                            key={folder.id}
-                            className='folder-list-item'
-                            itemID={folder.name}
-                            onClick={(e) => this.changeHeader(e)}>{folder.name}
-                                </option>
-                        )} 
-                        </select>
+                        {this.context.folders.map(folder =>
+                            <option
+                                key={folder.id}
+                                className='folder-list-item'
+                                itemID={folder.name}
+                                onClick={(e) => this.changeHeader(e)}>{folder.name}
+                            </option>
+                        )}
+                    </select>
                 </ul>
-                </div>
+            </div>
         )
     }
 }

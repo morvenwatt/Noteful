@@ -16,7 +16,7 @@ export default class NoteListSidebar extends React.Component {
         const { folders = [], notes = [] } = this.context
 
         console.log(this.context)
-        
+
         return (
             <div className='NoteListSidebar'>
                 <ul className='NoteListSidebar-list'>
@@ -27,18 +27,18 @@ export default class NoteListSidebar extends React.Component {
                                 to={`/folder/${folder.id}`}>
 
 
-                            <span className='NoteListSidebar-numOfNotes'>
-                                <p>({countNotesForFolder(notes, folder.id)})</p>
+                                <span className='NoteListSidebar-numOfNotes'>
+                                    <p>({countNotesForFolder(notes, folder.id)})</p>
                                 </span>
                                 <p>{folder.name}</p>
                             </NavLink>
                         </li>
-                        )}
+                    )}
                 </ul>
                 <Link to='/add-folder'>
                     <button className='addFolderButton'>Add Folder</button>
                 </Link>
-                
+
             </div>
         )
     }

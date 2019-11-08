@@ -13,6 +13,7 @@ class AddNote extends Component {
         this.state = {
             noteName: '',
             content: '',
+            modified: '',
             folderId: '',
             folderName: ''
         }
@@ -61,37 +62,34 @@ class AddNote extends Component {
             folderName: this.state.folderName,
             content: this.state.content,
         }
-       
-        
-        
-        
+
         this.context.notes.push(note)
 
-    fetch (`${config.API_ENDPOINT}/notes`, {
-        method: 'POST',
-        body: JSON.stringify(note),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(res => {
-        if (!res.ok) {
-        // get the error message from the response,
-        return res.json().then(error => {
-            // then throw it
-            throw error
+        fetch(`${config.API_ENDPOINT}/notes`, {
+            method: 'POST',
+            body: JSON.stringify(note),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
-        }
-        return res.json()
-    })
-    .then(data => {
-      this.context.addNote(data)
-      this.props.history.push(`/folder/${data.folder_id}`)
-    })
-    .catch(error => {
-      console.error({ error })
-    })
-}
+            .then(res => {
+                if (!res.ok) {
+                    // get the error message from the response,
+                    return res.json().then(error => {
+                        // then throw it
+                        throw error
+                    })
+                }
+                return res.json()
+            })
+            .then(data => {
+                this.context.addNote(data)
+                this.props.history.push(`/folder/${data.folder_id}`)
+            })
+            .catch(error => {
+                console.error({ error })
+            })
+    }
 
     render() {
         console.log(this.props.folderId, 'folderId')
@@ -108,11 +106,11 @@ class AddNote extends Component {
                         placeholder='Important Octopus To Do:'
                         onChange={(event) => this.updateNoteName(event.target.value)} />
 
-                   
-                 <FolderSelector
-                 folders={this.context.folders}
-                  updateFolderId={this.updateFolderId} 
-                  /> 
+
+                    <FolderSelector
+                        folders={this.context.folders}
+                        updateFolderId={this.updateFolderId}
+                    />
 
                     <label className='note-content-label'>Note Content:</label>
                     <textarea
@@ -120,7 +118,7 @@ class AddNote extends Component {
                         type='text'
                         placeholder="Schedule heart surgery for heart #3"
                         onChange={(event) => this.updateNoteContent(event.target.value)} />
-                       
+
 
                     <Link to='/'>
                         <button className='submit-note-button'

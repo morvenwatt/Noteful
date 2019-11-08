@@ -18,7 +18,7 @@ export default class NotePageSidebar extends React.Component {
 
     static contextType = ApiContext;
 
-       render(){
+    render() {
 
         const { notes, folders, } = this.context
         const { noteId } = this.props.match.params
@@ -28,9 +28,9 @@ export default class NotePageSidebar extends React.Component {
         return (
             <div className='NotePageSidebar'>
 
-            <button 
-            className='back-button'
-            onClick={() => this.props.history.goBack()}>
+                <button
+                    className='back-button'
+                    onClick={() => this.props.history.goBack()}>
                     Back
             </button>
 

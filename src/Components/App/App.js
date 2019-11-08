@@ -25,28 +25,45 @@ class App extends Component {
       fetch(`${config.API_ENDPOINT}/notes`),
       fetch(`${config.API_ENDPOINT}/folders`)
     ])
-    .then(([notesRes, foldersRes]) => {
-      if (!notesRes.ok)
-      return notesRes.json().then(e => Promise.reject(e));
-      if(!foldersRes.ok)
-      return foldersRes.json().then(e => Promise.reject(e));
+      .then(([notesRes, foldersRes]) => {
+        if (!notesRes.ok)
+          return notesRes.json().then(e => Promise.reject(e));
+        if (!foldersRes.ok)
+          return foldersRes.json().then(e => Promise.reject(e));
 
-      return Promise.all([notesRes.json(), foldersRes.json()]);
-    })
+        return Promise.all([notesRes.json(), foldersRes.json()]);
+      })
 
-    .then(([notes, folders]) => {
-      this.setState({notes, folders});
-    })
-    .catch(error => {
-      console.error({error});
-    })
-}
+      .then(([notes, folders]) => {
+        this.setState({ notes, folders });
+      })
+      .catch(error => {
+        console.error({ error });
+      })
+  }
 
-handleDeleteNote = noteId => {
-  this.setState({
-    notes: this.state.notes.filter(note => note.id !== noteId)
-  });
-}
+  handleDeleteNote = noteId => {
+    this.setState({
+      notes: this.state.notes.filter(note => note.id !== noteId)
+    });
+  }
+
+  // addFolder = folder => {
+  //   this.setState({
+  //     folders: [this.state.folders, folder]
+  //   })
+  // }
+
+  // addNote = note => {
+  //   this.setState({
+  //     notes: [...this.state.notes, note]
+  //   })
+  // }
+
+  // When I add these ^^^, I am getting duplicated notes, and it doesnt route back 
+  // to the homepage, and it still doesnt add note to a folder. 
+
+  
 
   renderSidebarRoutes() {
     return (
@@ -56,11 +73,11 @@ handleDeleteNote = noteId => {
             exact
             key={path}
             path={path}
-            component = {NoteListSidebar}
+            component={NoteListSidebar}
           />
         ))}
         <Route path='/note/:noteId' component={NotePageSidebar} />
-       
+
       </>
     )
   }
@@ -86,38 +103,40 @@ handleDeleteNote = noteId => {
   }
 
   render() {
-    
+
     const value = {
       notes: this.state.notes,
       folders: this.state.folders,
-      deleteNote: this.handleDeleteNote
+      deleteNote: this.handleDeleteNote,
+      //  addNote: this.addNote,
+      // addFolder: this.addFolder
     };
 
     return (
       <ErrorBoundary>
-      <ApiContext.Provider value={value}>
-      <div className='app'>
-        
-        <Link to='/'>
-        <header></header>
-        </Link>
-        <div className='lines'></div>
+        <ApiContext.Provider value={value}>
+          <div className='app'>
 
-        <nav className='Nav'>
-          {this.renderSidebarRoutes()}
-        </nav>
+            <Link to='/'>
+              <header></header>
+            </Link>
+            <div className='lines'></div>
 
-        <main className='main'>
-        {this.renderMainRoutes()}
-        <Route path='/add-folder' component={AddFolder} />
-        <Route path='/add-note' component={AddNote} />
-        </main>
+            <nav className='Nav'>
+              {this.renderSidebarRoutes()}
+            </nav>
 
-        <div className='lines'></div>
-        <footer className='footer'></footer>
+            <main className='main'>
+              {this.renderMainRoutes()}
+              <Route path='/add-folder' component={AddFolder} />
+              <Route path='/add-note' component={AddNote} />
+            </main>
 
-      </div>
-      </ApiContext.Provider>
+            <div className='lines'></div>
+            <footer className='footer'></footer>
+
+          </div>
+        </ApiContext.Provider>
       </ErrorBoundary>
     )
   }

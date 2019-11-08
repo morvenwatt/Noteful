@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { format } from 'date-fns'
-// import { Moment } from 'react';
+import moment from 'moment';
 import './Note.css';
 import ApiContext from '../../ApiContext';
 import config from '../../config';
@@ -41,7 +40,7 @@ export default class Note extends React.Component {
         // const note = this.context.notes
         const { name, id, content, modified } = this.props
         console.log(this.props)
-        
+
         return (
             <div className='Note'>
 
@@ -50,17 +49,17 @@ export default class Note extends React.Component {
                         {name}
                     </Link>
                 </h2>
-            
-                <button 
-                className='deleteButton' 
-                type='button'
-                onClick={(e) => this.handleClickDelete(e)}>
+
+                <button
+                    className='deleteButton'
+                    type='button'
+                    onClick={(e) => this.handleClickDelete(e)}>
                     Delete
                 </button>
 
                 <div className='dateModified'>
-                    Modified: 
-                    {/* <p>{format(modified, 'Do MMM YYYY')}</p> */}
+                    Modified:
+                    {moment(modified).format('DD MMM YYYY')}
                 </div>
 
                 <div className='content'>
