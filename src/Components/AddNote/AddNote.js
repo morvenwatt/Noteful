@@ -92,7 +92,6 @@ class AddNote extends Component {
     }
 
     render() {
-        console.log(this.props.folderId, 'folderId')
         return (
             <div className='add-note-container'>
                 <h2>Create A Note</h2>

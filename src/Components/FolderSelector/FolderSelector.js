@@ -24,7 +24,7 @@ class FolderSelector extends Component {
         const folderName = this.state.headerTitle;
         this.props.updateFolderId(folderName)
     }
-
+// ^^^ check out this ^^^
 
     changeHeader = (e) => {
         this.setState({
@@ -35,10 +35,7 @@ class FolderSelector extends Component {
     }
 
 
-
     render() {
-        console.log(this.context.folders)
-
         return (
             <div className='folder-selector'>
                 <h3>Choose A Folder:</h3>

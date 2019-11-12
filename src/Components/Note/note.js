@@ -37,10 +37,7 @@ export default class Note extends React.Component {
             })
     }
     render() {
-        // const note = this.context.notes
         const { name, id, content, modified } = this.props
-        console.log(this.props)
-
         return (
             <div className='Note'>
 

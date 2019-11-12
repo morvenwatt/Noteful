@@ -54,11 +54,13 @@ class App extends Component {
   //   })
   // }
 
-  // addNote = note => {
-  //   this.setState({
-  //     notes: [...this.state.notes, note]
-  //   })
-  // }
+  addNote = note => {
+    console.log('OCTOPUS-TESTING-SUITE', note)
+    // this.setState({
+    //   notes: [...this.state.notes, note]
+    // })
+    console.log(this.state)
+  }
 
   // When I add these ^^^, I am getting duplicated notes, and it doesnt route back 
   // to the homepage, and it still doesnt add note to a folder. 
@@ -108,7 +110,7 @@ class App extends Component {
       notes: this.state.notes,
       folders: this.state.folders,
       deleteNote: this.handleDeleteNote,
-      //  addNote: this.addNote,
+      addNote: this.addNote,
       // addFolder: this.addFolder
     };
 
